@@ -1,0 +1,60 @@
+                                                                    #COMMAND WITH ARITHEMATIC OPERATORS.......
+
+
+ADDITION(+)
+
+
+select salary+1000 from employees;
+
+
+SALARY+1000
+61000
+41000
+46000
+26000
+
+
+
+SUBRACTION(-)
+
+select salary-1000 from employees;
+
+
+SALARY-1000
+59000
+39000
+44000
+24000
+
+
+
+#INCREMENT OF SLARY BY 10%
+
+select salary+(salary*10/100) from employees;
+
+
+SALARY+(SALARY*10/100)
+66000
+44000
+49500
+27500
+
+
+#TOTAL SALARY AMOUNT FOR 6 M0ONTHS
+
+select salary*6 from employees;
+
+SALARY*6
+360000
+240000
+270000
+150000
+
+
+
+    OPERATOR              PRIORITY
+
+ MULTIPLICATION(*)           1
+    DIVISION(/)              2
+    ADDITION(+)              3
+   SUBTRACTION(-)            4
