@@ -1,0 +1,82 @@
+create table employees(
+empid number,
+empname varchar2(20),
+salary number,
+gender varchar2(6)
+);
+
+
+Table create.
+
+
+
+insert into employees values(001,'sam',55000,'male');
+insert into employees values(002,'ram',40000,'male');
+insert into employees values(003,'kim',30000,'male');
+insert into employees values(004,'sum',25000,'female');
+
+
+4 Rows inserted.
+
+
+
+select * from employees;
+
+
+EMPID	EMPNAME     SALARY	GENDER
+1	sam	  	55000		male
+2	ram		50000		male
+3	kim		45000		male
+4	sum		25000		female
+
+
+update employees set salary=40000 where empid=01
+
+1 Row updated.
+
+
+#updating a row using "and" keyword
+
+update employees set salary=40000 where gender='male' and empid=2
+
+
+1 Row updated.
+
+
+select * from employees
+
+EMPID	EMPNAME	SALARY	GENDER
+1	sam		60000		male
+2	ram		40000		male
+3	kim		45000		male
+4	sum		25000		female
+
+
+
+select salary from employees;
+
+SALARY
+60000
+40000
+45000
+25000
+
+
+select salary, empname from employees;
+
+
+SALARY EMPNAME
+60000   sam
+40000	  ram
+45000	  kim
+25000	  sum
+
+
+delete from employees empname = 'sam' where empid=01;
+
+1 Row deleted. 
+
+
+
+
+
