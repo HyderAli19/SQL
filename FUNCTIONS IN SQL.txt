@@ -1,0 +1,72 @@
+                                    #SQL FUCTIONS
+
+
+
+
+select upper(name)  from csd
+
+UPPER(NAME)
+HYDER
+ALI
+NASIR
+MAHIR
+NAFEESA
+KHAMAR
+
+
+select lower(name) from csd
+
+LOWER(NAME)
+hyder
+ali
+nasir
+mahir
+nafeesa
+khamar
+
+
+select min(age) from csd
+
+MIN(AGE)
+  22
+
+select max(age) from csd
+
+MAX(AGE)
+  299
+
+
+select avg(age) from csd
+
+AVG(AGE)
+82.1666666666666666666666666666666666667
+
+select substr(name,1,2) from csd  # give output first two letters of a given field.....
+
+SUBSTR(NAME,1,2)
+hy
+al
+na
+ma
+na
+kh
+
+select concat(name,age) from csd  # Merge two fields
+
+CONCAT(NAME,AGE)
+hyder22
+ali23
+nasir25
+mahir25
+nafeesa99
+khamar299
+
+
+
+SINGLE ROW FUNCTIONS       MILTIPLE ROW FUNCTIONS
+    UPPER()                      MIN()
+    LOWER()                      MAX()
+    LENGHTH()                    AVG()
+    CONCAT()                     COUNT()
+    SUBSTR()                     SUM()
+    INSTR()
