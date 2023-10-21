@@ -1,0 +1,50 @@
+                          #SUBQUERIES
+
+
+
+create table employee(
+id number,
+name varchar(20),
+age number,
+department varchar(20),
+salary number
+);
+
+
+
+ID	NAME		AGE	DEPARTMENT	SALARY
+11	kiran		22	testing	65000
+22	vicky		27	supporter	40000
+33	praveen	25	developer	45000
+44	kamlesh	25	developer	50000
+55	suresh	26	operations	66000
+66	ramesh	22	developer	80000
+77	bahu		25	testing	85000
+88	rana		25	operations	100000
+
+#SINGLE SUBQUERIES.....
+
+select id,name,age from employee
+where age>(select age from employee where name='kamlesh') == #subquery part
+
+
+
+ID	NAME		AGE
+22	vicky		27
+55	suresh	26
+
+
+#HAVING MORE THAN ONE SUBQUERY......
+
+select id,name,department,salary from employee
+where salary>(select salary from employee where name='vicky')
+and                                         
+age>=(select age from employee where name='rana')
+
+
+ID	NAME		DEPARTMENT	 SALARY
+33	praveen	developer	 45000
+44	kamlesh	developer	 50000
+55	suresh	operations	 66000
+77	bahu		testing	 85000
+88	rana		operations	 100000
