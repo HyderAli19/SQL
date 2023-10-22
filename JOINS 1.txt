@@ -1,0 +1,93 @@
+# JOINS
+
+
+JOINS = COMPARISION
+
+
+1 INNER JOIN OR EQUI JOIN
+2 NATURAL JOIN
+3 OUTER JOIN :-
+     A> LEFT OUTER JOIN
+     B> RIGHT OUTER JOIN
+     C> FULL ORDER JOIN
+
+
+1> INNER JOIN OR EQUI JOIN
+
+SYNTAC:-
+  select * from table1,tabl2 
+  where table1.<coloumn name> = table.2<coloumn name>)
+
+
+EX:-
+
+SELECT * FROM BANK
+
+
+  BANKID	NAME	LOAN
+   11		jsd	45786
+   12		kyfk	387636
+   13		saedf	3687
+   14		aff	3547
+   15		sdff	368745
+
+
+create table balance(
+bankid number,
+balance number);
+
+
+BANKID	BALANCE
+11		68785
+12		58738
+13		78965
+14		687687
+15		7485
+
+
+EQUI JOIN:=
+
+   select * from bank,balance
+where bank.bankid=balance.bankid
+
+
+BANKID	NAME	LOAN		BANKID	BALANCE
+11		jsd	45786		11		68785
+12		kyfk	387636	12		58738
+13		saedf	3687		13		78965
+14		aff	3547		14		687687
+15		sdff	368745	15		7485
+
+
+
+#USING INNER JOIN:-
+
+select * from bank inner join balance
+on bank.bankid=balance.bankid
+
+
+BANKID	NAME	LOAN		BANKID	BALANCE
+11		jsd	45786		11		68785
+12		kyfk	387636	12		58738
+13		saedf	3687		13		78965
+14		aff	3547		14		687687
+15		sdff	368745	15		7485
+
+
+
+2> NATURAL JOIN:= DONT SHOW DUBLICATE COLOUMNS       <SAME COLOMNS SHOWN 1 TIME>
+
+SYNTAX:=
+  SELECT * FROM <TABLE1 NAME> NATURAL JOIN <TABLE2 NAME>
+
+EX:=
+
+ select * from bank natural join balance
+
+
+BANKID	NAME	  LOAN	BALANCE
+11		jsd	 45786	68785
+12		kyfk	 387636	58738
+13		saedf	 3687		78965
+14		aff	 3547		687687
+15		sdff	 368745	7485
