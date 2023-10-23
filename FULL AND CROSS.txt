@@ -1,0 +1,108 @@
+#LEFTOUTER JOIN
+
+
+CREATE TABLE tab1(
+a number,b number);
+
+A	B
+1	2
+3	4
+5	6
+9	7
+
+
+
+create table tab2(b numbers,c numbers);
+
+B	C
+6	8
+2	8
+9	8
+
+SYNATX:=
+SELECT * FROM TABLE1NAME LEFT OUTER JOIN 
+0N TABLE1.COLOUMN NAME=TABLE2.COLOUM NNAME
+
+
+EX:=
+
+select * from tab1 left outer join tab2
+on tab1.b=tab2.b
+
+
+A	B	B	C
+5	6	6	8
+1	2	2	8
+9	7	-	-
+3	4	-	-
+
+
+
+
+#RIGHT OUTER JOIN:=
+
+SYNTAX:=
+
+SELECT * FROM TABLE1NAME RIGHT OUTER JOIN 
+0N TABLE1.COLOUMN NAME=TABLE2.COLOUM NNAME
+
+
+EX:=
+
+select * from tab1 right outer join tab2
+on tab1.b=tab2.b
+
+
+A	B	B	C
+1	2	2	8
+5	6	6	8
+-	-	9	8
+
+
+
+FULL OUTER JOIN:=
+
+SYNTAX:=
+
+SELECT * FROM TABLE1NAME FULL OUTER JOIN 
+0N TABLE1.COLOUMN NAME=TABLE2.COLOUM NNAME
+
+
+EX:=
+SELECT * FROM TAB1 FULL OUTER JOIN TAB2
+ON TAB1.B=TAB2.B
+
+A	B	B	C
+5	6	6	8
+1	2	2	8
+9	7	-	-
+3	4	-	-
+-	-	9	8
+
+
+CROSS JOIN:= GIVE RESULT AS CARTISIEN PRODUCT
+
+SYNTAX:=
+
+SELECT * FROM TABLE1NAME CROSS OUTER JOIN 
+( CONDITION NOT NEEDED).....
+
+EX:=
+
+SELECT * FROM TAB1 CROSS JOIN TAB2
+
+
+A	B	B	C
+1	2	6	8
+3	4	6	8
+5	6	6	8
+9	7	6	8
+1	2	2	8
+3	4	2	8
+5	6	2	8
+9	7	2	8
+1	2	9	8
+3	4	9	8
+
+
+
