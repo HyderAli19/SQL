@@ -1,0 +1,120 @@
+#TYPES OF NORMALIZATION:=
+
+
+4 TYPES ARE THERE....
+ 
+ THEY ARE :=\
+
+1> 1NF
+2> 2NF
+3> 3NF
+4> BOYCE CODE NORMAL FORM...
+
+
+
+
+CONSIDER A RAW DATA OF EMPLOYEE-PROJECT DETAILS..
+
+      P_NO      P_NAME      ENO     ENAME     RATING     HOURLY CHARGED
+      1001   JAVA PROJECT   10      SOUMYA       A            100
+                            20       RAVI        B             90
+                            30       KIRAN       C             80
+                            40       RAHUL       D             70
+     
+    1002  PYTHOH PROJECT    15       VIJAY       E             60
+                            10       SOUMYA      A             100
+
+   
+ THE ABOVE DATA NOT IN A TABLE FORMAT. WE CAN CONVERT IT INTO TABLE FORMAT WITHOUT USING CURD OPERTION.
+ 
+  WITH THE HELP OF NORMALIZATION PROCESS WE CAN CONVERT THE RAW DATA INTO TABLE FORMAT......
+
+
+
+1> 1NF:= A TABLE SHOULD IN 1NF WHEN IT HAVE
+            EACH ATTRIBTE SHOULD HAVE SEPARATE COLUNMS
+               EVERY CELL SHOULD BE ATOMIC
+                     ATOMIC REFERS SHOULD HAVE ONLY ONE VALUE IN ONE CELL....
+
+THE TABULAR FORMMAT OF ABOVE RAW DATA BY USING 1NF IF:=
+
+
+
+
+      P_NO      P_NAME      ENO     ENAME     RATING     HOURLY CHARGED
+      1001   JAVA PROJECT   10      SOUMYA       A            100
+      1001   JAVA PROJECT   20       RAVI        B             90
+      1001   JAVA PROJECT   30       KIRAN       C             80
+      1001   JAVA PROJECT   40       RAHUL       D             70
+      1002  PYTHOH PROJECT  15       VIJAY       E             60
+      1002  PYTHOH PROJECT  10       SOUMYA      A             100
+
+
+
+2> 2NF:=  A TABLE SHOULD BE IN 2NF WHEN IT HAVE
+             FORMAT OF 1NF...
+               DOES NOT HAE PARTIAL DEPENDENCY...
+
+FROM THE WE CAN SAY THAT P_NAME DEEND ON P_NO AND ENAME DEPENDS ON ENO WHICH CREATE AN PARTIAL DEPENDENCY....
+TO OER COME IT WE CAN USE 2NF. THE RESULT TABLE IS 
+  
+
+  EMPLOYEE:=               ENO     ENAME     RATING     HOURLY CHARGED              PROJECT:=
+                            10      SOUMYA       A            100
+                            20       RAVI        B             90                          P_NO        P_NAME
+                            30       KIRAN       C             80                          1001       JAVA PROJECT
+                            40       RAHUL       D             70                          1002       PYTHON PROJECT
+                            15       VIJAY       E             60
+                            10       SOUMYA      A            100
+
+
+
+PROJECT_EMPLOYEE:=
+       P_NO      E_NO
+       1001      10
+       1001      20 
+       1001      30
+       1001      40
+       1002      15
+       1002      10
+
+
+
+
+3>  3NF:=  IF TABLE IN 3NF THEN IT SHOULD HAVE 
+               SHOULD BE IN 2NF....
+                 AND SHOULD HAVE TRANSISTIVE DEPENDENCY....
+
+FROM ABOVE TABLE IN 2NF TABLES WE CAN SEE THERE IS TRANSISTIVE DEPENDENCY.....
+        
+
+               TRANSISTIVE DEPENDECY== HOURLY CHARGES DEPEDED ON RATING AND RATING DEPEND ON ENO
+                                    THEN HOURLY CHARGES ARE EPEND ON RATING....
+
+
+RESULTED TABLES ARE:=
+
+ PROJECT_EMPLOYEE:=                    EMPLOYEE:=                                RATING:=                                       PROJECT:=
+       P_NO      E_NO                     ENO    ENAME   RATING                                                                            P_NO    PNAME
+       1001      10                        10    SOUMYA   A                          RATING     HOURLY CHARGED                             1001    JAVA PROJECT
+       1001      20                        20    RAVI     B                            A           100                                     1002    PYTHON PROJECT
+       1001      30                        30    KIRAN    C                            B            90
+       1001      40                        40    RAHUL    D                            C            80
+       1002      15                        15    VIJAY    E                            D            70
+       1002      10                                                                    E            60
+  
+
+BCNF(BOYCE CODE NORMAL FORM):=
+    SHOULD BE IN 3NF
+        ALL DETERMINENT SHOULD BE KEYS(PRIMARY KEYS)
+
+             PROJECT_EMPLOYEE HAS BOTH P_NO AND E_NO PRIMARY KEYS(DETERMINENT)..........
+                  EMPLOYEE HAS ENO AS PRIMARY KEY(DETERMINENT)..........
+                     RATING HAS RATING PRIMARY KEY(DETERMINENT)..........
+                        PROJECT HAS P_NO AS PRIMARY KEY(DETERMINENT)............
+
+
+
+ 
+
+                    
